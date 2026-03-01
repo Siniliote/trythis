@@ -1,0 +1,11 @@
+{
+    "require": {
+        "deptrac/deptrac": "^4.0"
+    },
+    "config": {
+        "platform": {
+            "php": "8.4"
+        },
+        "sort-packages": true
+    }
+}
