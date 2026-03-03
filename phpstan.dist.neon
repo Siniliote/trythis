@@ -1,0 +1,26 @@
+includes:
+    - phpstan-baseline.neon
+    - tools/phpstan/vendor/phpstan/phpstan-doctrine/extension.neon
+    - tools/phpstan/vendor/phpstan/phpstan-symfony/extension.neon
+    - tools/phpstan/vendor/phpstan/phpstan-phpunit/extension.neon
+    - tools/phpstan/vendor/phpstan/phpstan-symfony/rules.neon
+    - tools/phpstan/vendor/phpstan/phpstan-doctrine/rules.neon
+
+parameters:
+    tmpDir: build/cache/.phpstan.cache
+    doctrine:
+        objectManagerLoader: tests/object-manager.php
+
+    level: 6
+
+    paths:
+        - bin
+        - public
+        - src
+
+    symfony:
+        containerXmlPath: var/cache/dev/App_KernelDevDebugContainer.xml
+        constantHassers: false
+    bootstrapFiles:
+        - vendor/autoload.php
+        - src/Kernel.php
